@@ -628,11 +628,13 @@ int main(int argc, char **argv)
 		get_mac(argv[3]);
 		}else{
 			get_mac("eth0");
+		   printf("jiangyibo mac is %s \n",deviceMac);
 		}
 		server_ip = argv[1];
 		server_port = argv[2];
 	}else{
 		get_mac("eth0");
+		printf("jiangyibo mac is %s \n",deviceMac);
 		server_ip = SERVER_IP;
 		server_port = SERVER_TCP_PORT;
 	}
@@ -659,6 +661,8 @@ connect:
 	tv.tv_usec = 0;
 	memset(sendmsg,0,4096);
 	sprintf(sendmsg, infomsg, deviceMac, commandkey, deviceMac, uptime);
+	printf("jiangyibo send %s\n",infomsg);
+	printf("jiangyibo send %s\n",sendmsg);
 	rc = send(s, (char *)sendmsg, strlen(sendmsg), 0);
 
 	for (;;)

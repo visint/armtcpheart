@@ -15,6 +15,6 @@ go build TcpServer.go
 cp js  /usr/lib/   
 
 客户端使用
-gcc tcp_hb.c tcp_client.c util.c b64.c -o tcpReport -I./jsonx86/out/include/json/  -L./jsonx86/out/lib -ljson
+arm-linux-gcc tcp_hb.c tcp_client.c util.c b64.c -o tcpReport -I./jsonarm/include/json-c/  -L./jsonarm/lib -ljson-c -lm
 ./tcpReport 127.0.0.1 8880
 
