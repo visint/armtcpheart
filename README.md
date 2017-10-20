@@ -15,6 +15,12 @@ go build TcpServer.go
 cp js  /usr/lib/   
 
 客户端使用
-arm-linux-gcc tcp_hb.c tcp_client.c util.c b64.c -o tcpReport -I./jsonarm/include/json-c/  -L./jsonarm/lib -ljson-c -lm
+arm-linux-gcc tcp_hb.c tcp_client.c util.c b64.c -o tcpReport -I./jsonarm/include/json-c/  -L./jsonarm/lib -lm -ljson-c
+
+
+arm-linux-gcc tcp_hb.c tcp_client.c util.c b64.c libjson-c.a -o tcpReport  -I./jsonarm/include/json-c/ -I/home/sintai/srcsintai/include -L/home/sintai/srcsintai/linuxlib -lotns -liconv -lsqlite3 -lm
+
+
+
 ./tcpReport 127.0.0.1 8880
 
